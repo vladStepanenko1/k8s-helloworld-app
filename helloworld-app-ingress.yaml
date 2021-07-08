@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: helloworld-app-ingress
+spec:
+  rules:
+    - host: helloworld-app.com
+      http:
+        paths:
+          - backend:
+              serviceName: helloworld-app-service
+              servicePort: 8000
